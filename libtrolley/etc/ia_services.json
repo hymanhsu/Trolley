@@ -1,0 +1,13 @@
+[
+    {
+        "serviceName" : "TEST",
+        "endpoints" : [
+            {
+                "ip" : "127.0.0.1",
+                "port" : 18000,
+                "timeout" : 1,
+                "poolSize" : 5
+            }
+        ]
+    }
+]
