@@ -40,7 +40,7 @@ public:
 
     void Start();
     void Execute();
-    void PushTask(Task* pTask);
+    void PushTask(CommonTask* pTask);
 
     void set_thread_idx(uint32_t idx) {
         m_thread_idx = idx; 
@@ -54,7 +54,7 @@ private:
     uint32_t		m_task_cnt;
     pthread_t		m_thread_id;
     ThreadNotify	m_thread_notify;
-    std::list<Task*>     m_task_list;
+    std::list<CommonTask*>     m_task_list;
     ThreadPool      *m_parent_thread_pool;
 };
 
@@ -64,7 +64,7 @@ public:
     virtual ~ThreadPool();
 
     int Init(uint32_t worker_size=6, uint32_t rearrange_task_waterline=10);
-    void AddTask(Task* pTask);
+    void AddTask(CommonTask* pTask);
     void Destory();
     
     uint32_t idle_thread_idx() const;

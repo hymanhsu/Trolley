@@ -5,7 +5,7 @@
 
 #include <evhttp.h>
 
-class HttpTask : public Task
+class HttpTask : public CommonTask
 {
 public:
     HttpTask(struct evhttp_request *req);

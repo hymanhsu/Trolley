@@ -59,16 +59,18 @@ else()
     add_definitions(-Wstrict-aliasing)
     add_definitions(-std=c++11)
     add_definitions(-fPIC)
-	add_definitions(-g)
+    add_definitions(-g)
     add_definitions(-O2)
 endif()
 
 find_package(Threads)
-find_library(M_LIB NAMES m)
 add_library(trolley_static STATIC ${SOURCES})
 
 target_link_libraries(trolley_static 
     ${CMAKE_THREAD_LIBS_INIT} 
+)
+
+target_link_libraries(trolley_static 
     zlog_static 
     gflags 
     jsoncpp_lib_static

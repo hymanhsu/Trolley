@@ -1,11 +1,11 @@
-#ifndef __TASK_H__
-#define __TASK_H__
+#ifndef __COMMONTASK_H__
+#define __COMMONTASK_H__
 
-class Task {
+class CommonTask {
 public:
-    Task(){}
-    virtual ~Task(){}
+    CommonTask(){}
+    virtual ~CommonTask(){}
     virtual void run() = 0;
 };
 
-#endif /*defined(__TASK_H__) */
+#endif /*defined(__COMMONTASK_H__) */

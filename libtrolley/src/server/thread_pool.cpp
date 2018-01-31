@@ -65,7 +65,7 @@ void WorkerThread::Execute()
             INFO("Worker receive stop command and exit!");
             break;
         }else{
-            Task* pTask = m_task_list.front();
+            CommonTask* pTask = m_task_list.front();
             m_task_list.pop_front();
             --m_task_cnt;
             m_thread_notify.Unlock();
@@ -78,7 +78,7 @@ void WorkerThread::Execute()
                 && m_task_cnt > m_parent_thread_pool->rearrange_task_waterline() 
                 && m_task_cnt > average_load_cnt ) {
                 uint32_t pop_task_cnt = m_task_cnt - average_load_cnt;
-                Task* pTempTask = NULL;
+                CommonTask* pTempTask = NULL;
                 for(int i=0; i< pop_task_cnt; i++) {
                     m_thread_notify.Lock();
                     pTempTask = m_task_list.front();
@@ -95,7 +95,7 @@ void WorkerThread::Execute()
 	}
 }
 
-void WorkerThread::PushTask(Task* pTask)
+void WorkerThread::PushTask(CommonTask* pTask)
 {
 	m_thread_notify.Lock();
 	m_task_list.push_back(pTask);
@@ -154,7 +154,7 @@ void ThreadPool::Destory()
         delete [] m_worker_list;
 }
 
-void ThreadPool::AddTask(Task* pTask)
+void ThreadPool::AddTask(CommonTask* pTask)
 {
     m_worker_list[idle_thread_idx()].PushTask(pTask);
 }
