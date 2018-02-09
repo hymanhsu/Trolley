@@ -89,7 +89,7 @@ public:
     /**
     * 处理JSON请求
     **/
-    virtual int ProcessJson(const rapidjson::Document & request, rapidjson::Document & response, std::string & reason) = 0;
+    virtual int ProcessJson(const rapidjson::Document & request, rapidjson::Document & response, std::string & reason, const std::string& rawRequest) = 0;
 };
 
 #endif

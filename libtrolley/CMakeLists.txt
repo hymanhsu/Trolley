@@ -27,6 +27,7 @@ set(SOURCES
         ${PROJECT_SOURCE_DIR}/src/util/log.cpp
         ${PROJECT_SOURCE_DIR}/src/util/util.cpp
         ${PROJECT_SOURCE_DIR}/src/util/cmdflags.cpp
+        ${PROJECT_SOURCE_DIR}/src/util/timer.cpp
         ${PROJECT_SOURCE_DIR}/src/server/http_corouter.cpp
         ${PROJECT_SOURCE_DIR}/src/server/http_server.cpp
         ${PROJECT_SOURCE_DIR}/src/server/http_task.cpp

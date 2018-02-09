@@ -2,6 +2,7 @@
 
 
 DEFINE_bool(daemonize, false, "Daemonize mode, default is False");
+DEFINE_bool(forceWriteLogfile, false, "Force to write log to file, default is False");
 DEFINE_string(workingdir, "/tmp/intelli/", "Working directory, default is '/tmp/intelli/' ");
 
 DEFINE_string(logoutdir, "/tmp/intelli/logs/", "The output directory which write logs, default is '/tmp/logs/' ");

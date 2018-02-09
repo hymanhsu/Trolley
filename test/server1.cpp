@@ -33,7 +33,7 @@ public:
     /**
     * 处理JSON请求
     **/
-    int ProcessJson(const rapidjson::Document & request, rapidjson::Document & response, std::string & reason){
+    int ProcessJson(const rapidjson::Document & request, rapidjson::Document & response, std::string & reason, const std::string& rawRequest){
 		if(request.HasMember("key")){
 			int sleep_ms = request["sleep"].GetInt();
 			std::string strValue = request["key"].GetString();

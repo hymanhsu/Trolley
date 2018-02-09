@@ -16,7 +16,7 @@ void JsonHandler::Process(const HttpRequest& httpRequest, HttpResponse& httpResp
     rapidjson::Document response;
     response.SetObject();
     std::string reason;
-    int code = ProcessJson(request,response,reason);
+    int code = ProcessJson(request,response,reason,httpRequest.getBody());
     httpResponse.setCode(code);
     httpResponse.setReason(reason);
     rapidjson::StringBuffer strbuf;

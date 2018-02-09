@@ -4,6 +4,7 @@
 #include <gflags/gflags.h>
 
 DECLARE_bool(daemonize);
+DECLARE_bool(forceWriteLogfile);
 DECLARE_string(workingdir);
 
 DECLARE_string(logoutdir);

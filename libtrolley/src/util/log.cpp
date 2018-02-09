@@ -49,7 +49,7 @@ int log_init_from_flags()
 	ss << "normalFormat	= \"%D.%ms.%us %v [%p:%t:%f:%L] %m%n\"" << std::endl;
 	ss << "" << std::endl;
 	ss << "[rules]" << std::endl;
-	if(FLAGS_daemonize){
+	if(FLAGS_daemonize || FLAGS_forceWriteLogfile){
 		mkdirs(FLAGS_logoutdir.c_str(),0755);
 		ss << "my_cat." << FLAGS_loglevel << "	\"" << FLAGS_logoutdir << "/intelli.log.%d(%F)\",1GB*5;normalFormat" << std::endl;
 	}else{
